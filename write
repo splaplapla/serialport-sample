@@ -20,7 +20,7 @@ parity = nil
 sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 
 puts "start..."
-sp.write "hello #{Time.now} from #{whoiam}\n"
+sp.write_nonblock "1234gfjdknf\n"
 
 puts "end..."
 sp.close
