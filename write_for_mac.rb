@@ -13,9 +13,6 @@ parity = nil
 # シリアルポートのオープン
 sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 
-while (line = sp.gets) do
-  print line
-end
+sp.write "hello\n"
 
-# シリアルポートをクローズ
 sp.close
