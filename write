@@ -1,3 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'serialport'
+
 case ENV["IAM"]
 when "mac"
   port_str = "/dev/tty.usbserial-AB0N63JR"
