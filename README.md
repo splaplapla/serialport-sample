@@ -3,4 +3,6 @@
 
 ## Setup
 * $ cp dotenvrc .envrc
-* .envrc に IAM=を書く
+
+## 使い方
+* .envrc に IAM=を書くと、`bundle exec ruby read` と `bundle exec ruby write`だけで送受信のテストができる
