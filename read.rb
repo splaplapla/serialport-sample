@@ -1,6 +1,13 @@
 require 'serialport'
 
-port_str = "/dev/serial0"
+case ENV["IAM"]
+when "mac"
+  port_str = "/dev/tty.usbserial-AB0N63JR"
+when "raspi"
+  port_str = "/dev/serial0"
+else
+  raise "unknown iam"
+end
 baud_rate = 9600
 data_bits = nil
 stop_bits = nil
