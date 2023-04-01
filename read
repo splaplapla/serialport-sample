@@ -18,9 +18,14 @@ parity = nil
 sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 
 puts "start..."
-while (line = sp.read) do
-  print line
+begin
+  while (line = sp.read_nonblock) do
+    puts line
+  end
+rescue IO::EAGAINWaitReadable
+  sleep 0.3
+  retry
 end
 
-puts "end..."
+puts "end"
 sp.close
